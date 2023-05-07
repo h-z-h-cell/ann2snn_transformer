@@ -75,13 +75,13 @@ def train(model,train_loader,eval_loader,args):
     model.to(device)
     criterion = nn.CrossEntropyLoss().cuda()
     optimizer = torch.optim.SGD(model.parameters() ,lr=args.lr,momentum=0.9)
-    lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs,eta_min=1e-5)
     if args.inherit==True:
         checkpoint = torch.load(args.model_path)
         model.load_state_dict(checkpoint['model'])
         optimizer.load_state_dict(checkpoint['optimizer'])
     if args.use_amp:
         model, optimizer = amp.initialize(model, optimizer, opt_level="O2")
+    lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs)
     best_acc = 0
     for epoch in range(args.epochs):
         loss1,batch_time1 = train_one_epoch(model,train_loader,optimizer,criterion,args,epoch)
@@ -232,7 +232,7 @@ if __name__ == '__main__':
                                           CIFAR10Policy(),  # 随机选择CIFAR10上最好的25个子策略之一。
                                           transforms.ToTensor(),  # 将PIL Image或numpy.ndarray转换为tensor，并归一化到[0,1]之间
                                           transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),  # 标准化处理-->转换为标准正太分布（高斯分布），使模型更容易收敛
-                                          Cutout(n_holes=1, length=16)
+                                          Cutout(n_holes=1, length=4)
                                           ])
         trans_test = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),])
         train_dataset = torchvision.datasets.CIFAR10(root=".", train=True ,transform=trans_train, download=True)
