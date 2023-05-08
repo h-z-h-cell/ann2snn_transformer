@@ -10,7 +10,7 @@ import torchvision.transforms as transforms
 from utils import *
 import model
 import time
-from apex import amp
+from torch.cuda.amp import autocast,GradScaler
 config_parser = argparse.ArgumentParser(description='parameter file')
 config_parser.add_argument('-c', '--config', default='cifar10.yml', type=str, metavar='FILE',
                     help='YAML config file specifying default arguments')
@@ -74,13 +74,12 @@ def train(model,train_loader,eval_loader,args):
             f.write(args_text.replace("\n"," ")+'\n')
     model.to(device)
     criterion = nn.CrossEntropyLoss().cuda()
+    optimizer = torch.optim.AdamW(model.parameters(),lr=args.lr,betas=(0.9,0.999),eps=1e-8,weight_decay=args.wd,amsgrad=False)
     optimizer = torch.optim.SGD(model.parameters() ,lr=args.lr,momentum=0.9)
     if args.inherit==True:
         checkpoint = torch.load(args.model_path)
         model.load_state_dict(checkpoint['model'])
         optimizer.load_state_dict(checkpoint['optimizer'])
-    if args.use_amp:
-        model, optimizer = amp.initialize(model, optimizer, opt_level="O2")
     lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs)
     best_acc = 0
     for epoch in range(args.epochs):
@@ -92,22 +91,15 @@ def train(model,train_loader,eval_loader,args):
         if args.save == True:
             if not os.path.exists('./{}'.format(args.id)):
                 os.mkdir('./{}'.format(args.id))
-            if args.use_amp:
-                checkpoint = {
-                    'model': model.state_dict(),
-                    'optimizer': optimizer.state_dict(),
-                    'amp': amp.state_dict()
-                }
-            else:
-                checkpoint = {
-                    'model': model.state_dict(),
-                    'optimizer': optimizer.state_dict()
-                }
+            checkpoint = {
+                'model': model.state_dict(),
+                'optimizer': optimizer.state_dict()
+            }
             torch.save(checkpoint, './{}/model{}.pt'.format(args.id,epoch))
             if top1 > best_acc:
                 best_acc = top1
                 print("Update-Best:%d" % (epoch + 1))
-                torch.save(checkpoint, './{}/model{}.pt'.format(args.id,epoch))
+                torch.save(checkpoint, './{}/best_model.pt'.format(args.id))
         if args.save_acc == True:
             with open("./{}/{}".format(args.id,'acc_log.txt'),'a') as f:
                 f.write("Epoch{}/{} train_losses:{} train_batch_time:{}\n".format(epoch+1,args.epochs,loss1,batch_time1))
@@ -138,23 +130,31 @@ def train_one_epoch(model, loader, optimizer, loss_fn, args,nowepoch):
     # model.eval() ，相当于告诉 BN 层，我现在要测试了，你用刚刚统计的 μ和 σ来测试我，不要再变了。
     model.train()
     end = time.time()
+    if args.use_amp:
+        scaler = GradScaler()
     for batch_idx, (input, target) in enumerate(loader):
         # 如果没有预取，就手动载入gpu
         input, target = input.cuda(), target.cuda()
-        output = model(input)
-        loss = loss_fn(output, target)
-        losses_m.update(loss.item(), input.size(0))
         #清空过往梯度
         optimizer.zero_grad()
-        # 反向传播，计算当前梯度
         if args.use_amp:
-            with amp.scale_loss(loss, optimizer) as scaled_loss:
-                scaled_loss.backward()
+            with autocast():
+                # 计算模型对应的输出
+                output = model(input)
+                # 计算模型对应的损失
+                loss = loss_fn(output, target)
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
         else:
+            output = model(input)
+            loss = loss_fn(output, target)
+            # 反向传播，计算当前梯度
             loss.backward()
-        #根据梯度更新网络参数
-        optimizer.step()
-        #更新每跑一批所用的平均时间
+            #根据梯度更新网络参数
+            optimizer.step()
+            #更新每跑一批所用的平均时间
+        losses_m.update(loss.item(), input.size(0))
         batch_time_m.update(time.time() - end)
         # 如果是最后一批，或者想每隔几轮打印一些信息就进入这循环
         end = time.time()
@@ -232,7 +232,7 @@ if __name__ == '__main__':
                                           CIFAR10Policy(),  # 随机选择CIFAR10上最好的25个子策略之一。
                                           transforms.ToTensor(),  # 将PIL Image或numpy.ndarray转换为tensor，并归一化到[0,1]之间
                                           transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),  # 标准化处理-->转换为标准正太分布（高斯分布），使模型更容易收敛
-                                          Cutout(n_holes=1, length=4)
+                                          Cutout(n_holes=1, length=16)
                                           ])
         trans_test = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),])
         train_dataset = torchvision.datasets.CIFAR10(root=".", train=True ,transform=trans_train, download=True)
