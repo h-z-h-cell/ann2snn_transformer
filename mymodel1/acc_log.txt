@@ -1,0 +1,437 @@
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel7/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: false use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel7/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: false use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel7/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: false use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel7/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: false use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: false use_maxpool: true wd: 0.0005 
+Epoch1/120 train_losses:2.168935841445923 train_batch_time:0.10589484516007211
+Epoch1/120 eval_losses:1.8907498748779297 top1-acc:32.12 top5-acc:84.41 eval_batch_time:0.04077129303270085
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/120 train_losses:2.171701378631592 train_batch_time:0.08288091527836403
+Epoch1/120 eval_losses:1.9603670095443726 top1-acc:30.31 top5-acc:83.34 eval_batch_time:0.02378345902558345
+Epoch2/120 train_losses:2.0516220979309083 train_batch_time:0.08302051240525891
+Epoch2/120 eval_losses:1.8454949619293213 top1-acc:32.23 top5-acc:85.12 eval_batch_time:0.023382227891569685
+Epoch3/120 train_losses:1.9736672096252441 train_batch_time:0.08269058926331113
+Epoch3/120 eval_losses:1.8056866147994994 top1-acc:36.56 top5-acc:86.48 eval_batch_time:0.024872582429533552
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/120 train_losses:2.171701378631592 train_batch_time:0.08350925463849626
+Epoch1/120 eval_losses:1.9603670095443726 top1-acc:30.31 top5-acc:83.34 eval_batch_time:0.023394940005745858
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 120 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: false use_maxpool: true wd: 0.0005 
+Epoch1/120 train_losses:2.168935841445923 train_batch_time:0.13440530928199554
+Epoch1/120 eval_losses:1.8907498748779297 top1-acc:32.12 top5-acc:84.41 eval_batch_time:0.061926536499315
+Epoch2/120 train_losses:2.0430241442871093 train_batch_time:0.16826809519697028
+Epoch2/120 eval_losses:1.805670400238037 top1-acc:34.53 top5-acc:84.35 eval_batch_time:0.05966123350106987
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: false use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/30 train_losses:2.171701378631592 train_batch_time:0.1114525145581921
+Epoch1/30 eval_losses:1.9603670095443726 top1-acc:30.31 top5-acc:83.34 eval_batch_time:0.03517076012435233
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.001 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.01 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/30 train_losses:2.034493435173035 train_batch_time:0.1457855012410742
+Epoch1/30 eval_losses:1.8853597999572753 top1-acc:34.73 top5-acc:84.36 eval_batch_time:0.044777153403895674
+Epoch2/30 train_losses:1.988356861152649 train_batch_time:0.15822357167978116
+Epoch2/30 eval_losses:1.7712593677520752 top1-acc:36.41 top5-acc:86.26 eval_batch_time:0.05050289858678344
+Epoch3/30 train_losses:1.9237567544937133 train_batch_time:0.13325059261468367
+Epoch3/30 eval_losses:1.7391758209228516 top1-acc:38.91 top5-acc:88.75 eval_batch_time:0.03557967684071535
+Epoch4/30 train_losses:1.8746898091888429 train_batch_time:0.11422291253228932
+Epoch4/30 eval_losses:1.7132932970046997 top1-acc:40.44 top5-acc:88.92 eval_batch_time:0.035908194863872166
+Epoch5/30 train_losses:1.8356247721481322 train_batch_time:0.15148046284990238
+Epoch5/30 eval_losses:1.6918275922775268 top1-acc:39.3 top5-acc:91.01 eval_batch_time:0.05006672774150873
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.01 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/30 train_losses:1.9080304439544677 train_batch_time:0.11531581018891786
+Epoch1/30 eval_losses:1.7103021692276001 top1-acc:39.49 top5-acc:87.46 eval_batch_time:0.0355148786192487
+Epoch2/30 train_losses:1.866824673461914 train_batch_time:0.1286849762167772
+Epoch2/30 eval_losses:1.658008249092102 top1-acc:39.71 top5-acc:88.16 eval_batch_time:0.03639078443976724
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 30 extra_t: 0 gpus: 1 id: mymodel1 inherit: true l: 4 lr: 0.01 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/model0.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/30 train_losses:1.8362501639556885 train_batch_time:0.11649692698817729
+Epoch1/30 eval_losses:1.6354074729919434 top1-acc:41.98 top5-acc:88.57 eval_batch_time:0.036118300857058
+Epoch2/30 train_losses:1.81864854057312 train_batch_time:0.11737605372963049
+Epoch2/30 eval_losses:1.5701090394973756 top1-acc:43.12 top5-acc:90.13 eval_batch_time:0.036077213894789385
+Epoch3/30 train_losses:1.7498933575439453 train_batch_time:0.1539431084757266
+Epoch3/30 eval_losses:1.5420005863189696 top1-acc:44.0 top5-acc:91.23 eval_batch_time:0.048925124915542115
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 150 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.01 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/150 train_losses:2.751564016571045 train_batch_time:0.11204512101000227
+Epoch1/150 eval_losses:2.608078462600708 top1-acc:19.24 top5-acc:76.65 eval_batch_time:0.03563486998248252
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 150 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.01 mlp_ratio: 4 mode: ann model: transformer model_path: ./mymodel1/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/150 train_losses:2.8687826358032225 train_batch_time:0.11340766550634829
+Epoch1/150 eval_losses:2.415265771865845 top1-acc:20.25 top5-acc:79.6 eval_batch_time:0.03547765494911534
+Epoch2/150 train_losses:2.4018025058746337 train_batch_time:0.11971127682024865
+Epoch2/150 eval_losses:2.452775047492981 top1-acc:26.77 top5-acc:78.25 eval_batch_time:0.04984744187373265
+Epoch3/150 train_losses:2.200006089935303 train_batch_time:0.15946954991811377
+Epoch3/150 eval_losses:1.9709725002288818 top1-acc:31.08 top5-acc:85.81 eval_batch_time:0.04892875586345697
+Epoch4/150 train_losses:1.987759652709961 train_batch_time:0.15781694635405868
+Epoch4/150 eval_losses:1.678903904914856 top1-acc:40.31 top5-acc:88.75 eval_batch_time:0.049181087761168266
+Epoch5/150 train_losses:1.865383130493164 train_batch_time:0.15939797190449123
+Epoch5/150 eval_losses:1.6659955492973328 top1-acc:40.73 top5-acc:90.73 eval_batch_time:0.04970193668535561
+Epoch6/150 train_losses:1.7711856621551514 train_batch_time:0.15796818117351483
+Epoch6/150 eval_losses:1.4296786476135255 top1-acc:48.72 top5-acc:92.65 eval_batch_time:0.04146733405483756
+Epoch7/150 train_losses:1.7091364499282837 train_batch_time:0.11824483456818954
+Epoch7/150 eval_losses:1.4340414817810059 top1-acc:48.51 top5-acc:91.28 eval_batch_time:0.03652792523620994
+Epoch8/150 train_losses:1.6519097016143798 train_batch_time:0.1370557482590151
+Epoch8/150 eval_losses:1.3501044120788575 top1-acc:50.95 top5-acc:93.54 eval_batch_time:0.050422402703837986
+Epoch9/150 train_losses:1.5862328561401366 train_batch_time:0.13568100356080037
+Epoch9/150 eval_losses:1.3437269302368164 top1-acc:52.5 top5-acc:92.86 eval_batch_time:0.03565059345998582
+Epoch10/150 train_losses:1.549838428878784 train_batch_time:0.11698927324446266
+Epoch10/150 eval_losses:1.28938141746521 top1-acc:54.2 top5-acc:94.29 eval_batch_time:0.03622166670052109
+Epoch11/150 train_losses:1.5061681885528564 train_batch_time:0.11868657724326834
+Epoch11/150 eval_losses:1.1832443281173706 top1-acc:56.36 top5-acc:95.6 eval_batch_time:0.036583997641399406
+Epoch12/150 train_losses:1.4729147467422485 train_batch_time:0.1214376877031058
+Epoch12/150 eval_losses:1.135709128189087 top1-acc:59.5 top5-acc:95.62 eval_batch_time:0.036467972834398794
+Epoch13/150 train_losses:1.4491475844573976 train_batch_time:0.11607100561146846
+Epoch13/150 eval_losses:1.11684391746521 top1-acc:59.76 top5-acc:95.76 eval_batch_time:0.03584961526712794
+Epoch14/150 train_losses:1.41564449508667 train_batch_time:0.15188254267358414
+Epoch14/150 eval_losses:1.106369680595398 top1-acc:59.64 top5-acc:96.18 eval_batch_time:0.04996083800200444
+Epoch15/150 train_losses:1.3899494617462158 train_batch_time:0.13343903262292028
+Epoch15/150 eval_losses:1.0884607761383056 top1-acc:61.18 top5-acc:96.13 eval_batch_time:0.035668315401502476
+Epoch16/150 train_losses:1.3637737953948974 train_batch_time:0.1327295745425212
+Epoch16/150 eval_losses:1.046866328716278 top1-acc:62.93 top5-acc:96.48 eval_batch_time:0.04997363060143343
+Epoch17/150 train_losses:1.3427002890777588 train_batch_time:0.159470512738923
+Epoch17/150 eval_losses:1.057597509288788 top1-acc:62.28 top5-acc:96.21 eval_batch_time:0.04961425179888489
+Epoch18/150 train_losses:1.3259319562530518 train_batch_time:0.1320485404080442
+Epoch18/150 eval_losses:1.0557880447387695 top1-acc:62.68 top5-acc:96.66 eval_batch_time:0.03647034031570338
+Epoch19/150 train_losses:1.3111729265975953 train_batch_time:0.11797401118461433
+Epoch19/150 eval_losses:1.0287298697471619 top1-acc:63.67 top5-acc:96.83 eval_batch_time:0.03630949129724199
+Epoch20/150 train_losses:1.285798411140442 train_batch_time:0.11935204191281058
+Epoch20/150 eval_losses:0.9800514667510987 top1-acc:64.84 top5-acc:97.08 eval_batch_time:0.036157559437356934
+Epoch21/150 train_losses:1.2617435609817504 train_batch_time:0.12153952902235339
+Epoch21/150 eval_losses:1.0204176849365234 top1-acc:63.67 top5-acc:96.73 eval_batch_time:0.03595951256478668
+Epoch22/150 train_losses:1.2580872372627259 train_batch_time:0.11927407507396415
+Epoch22/150 eval_losses:0.9264868139266967 top1-acc:67.7 top5-acc:97.31 eval_batch_time:0.035790542128739083
+Epoch23/150 train_losses:1.24855455078125 train_batch_time:0.14271321747918872
+Epoch23/150 eval_losses:0.9575478212833405 top1-acc:65.71 top5-acc:97.06 eval_batch_time:0.03585205867791631
+Epoch24/150 train_losses:1.2370906270217896 train_batch_time:0.11624604875169446
+Epoch24/150 eval_losses:0.865367663192749 top1-acc:69.25 top5-acc:97.73 eval_batch_time:0.03569961049754149
+Epoch25/150 train_losses:1.2112897838783263 train_batch_time:0.12740089856755094
+Epoch25/150 eval_losses:0.8736167267799377 top1-acc:68.94 top5-acc:97.58 eval_batch_time:0.03576183926527667
+Epoch26/150 train_losses:1.201600245475769 train_batch_time:0.12170764796264336
+Epoch26/150 eval_losses:0.9721773582458496 top1-acc:66.69 top5-acc:97.3 eval_batch_time:0.04943921611567212
+Epoch27/150 train_losses:1.1836637073135376 train_batch_time:0.16458435893973425
+Epoch27/150 eval_losses:0.8869067912101746 top1-acc:68.66 top5-acc:97.29 eval_batch_time:0.035759292590390346
+Epoch28/150 train_losses:1.1653417724609374 train_batch_time:0.11589179502423767
+Epoch28/150 eval_losses:0.8670348288536072 top1-acc:69.65 top5-acc:97.5 eval_batch_time:0.03624258982907435
+Epoch29/150 train_losses:1.1594787537384033 train_batch_time:0.1458364158030361
+Epoch29/150 eval_losses:0.8276962034225464 top1-acc:70.51 top5-acc:98.08 eval_batch_time:0.049348416601776315
+Epoch30/150 train_losses:1.1459906331253051 train_batch_time:0.15526166504911146
+Epoch30/150 eval_losses:0.9338810388565063 top1-acc:66.38 top5-acc:97.23 eval_batch_time:0.03559935776291379
+Epoch31/150 train_losses:1.13015771648407 train_batch_time:0.11750870257082498
+Epoch31/150 eval_losses:0.853056128501892 top1-acc:70.41 top5-acc:97.95 eval_batch_time:0.03567554692553866
+Epoch32/150 train_losses:1.123906994342804 train_batch_time:0.11711861959198856
+Epoch32/150 eval_losses:0.8147777473449707 top1-acc:71.16 top5-acc:98.22 eval_batch_time:0.03555027087023304
+Epoch33/150 train_losses:1.1112103498077393 train_batch_time:0.11686812428867116
+Epoch33/150 eval_losses:0.844628794002533 top1-acc:70.69 top5-acc:97.51 eval_batch_time:0.035614258164812805
+Epoch34/150 train_losses:1.0910656510925294 train_batch_time:0.11864523783974025
+Epoch34/150 eval_losses:0.8131423253059388 top1-acc:71.43 top5-acc:98.01 eval_batch_time:0.03571856857105425
+Epoch35/150 train_losses:1.0832073707580567 train_batch_time:0.14774618673202633
+Epoch35/150 eval_losses:0.8289684299468995 top1-acc:71.14 top5-acc:97.96 eval_batch_time:0.05019505160629369
+Epoch36/150 train_losses:1.083679566307068 train_batch_time:0.16195084219393524
+Epoch36/150 eval_losses:0.7673405820846557 top1-acc:73.18 top5-acc:98.13 eval_batch_time:0.04949824521496038
+Epoch37/150 train_losses:nan train_batch_time:0.10878946256759527
+Epoch37/150 eval_losses:nan top1-acc:10.0 top5-acc:50.0 eval_batch_time:0.036144860990487845
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 150 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.01 mlp_ratio: 4 mode: snn model: transformer model_path: ./mymodel1/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 150 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.01 mlp_ratio: 4 mode: snn model: transformer model_path: ./mymodel1/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+action: train bs: 64 data: cifar10 device: cuda dim: 384 epochs: 150 extra_t: 0 gpus: 1 id: mymodel1 inherit: false l: 4 lr: 0.01 mlp_ratio: 4 mode: snn model: transformer model_path: ./mymodel1/best_model.pt num_heads: 12 patch_size: 4 save: true save_acc: true seed: 42 t: 4 use_amp: true use_maxpool: true wd: 0.0005 
+Epoch1/150 train_losses:2.697399546508789 train_batch_time:0.11252084747909585
+Epoch1/150 eval_losses:6.237826113128662 top1-acc:13.86 top5-acc:68.98 eval_batch_time:0.06675396147806933
+Epoch2/150 train_losses:2.4788294833374023 train_batch_time:0.12253687601260212
+Epoch2/150 eval_losses:2.2631652877807618 top1-acc:28.24 top5-acc:78.62 eval_batch_time:0.06186932211468933
+Epoch3/150 train_losses:2.181290494995117 train_batch_time:0.12908532643866966
+Epoch3/150 eval_losses:1.9331821071624755 top1-acc:33.04 top5-acc:85.06 eval_batch_time:0.061856783119736206
+Epoch4/150 train_losses:2.00457149307251 train_batch_time:0.1306682312884904
+Epoch4/150 eval_losses:1.6854864240646363 top1-acc:40.57 top5-acc:88.84 eval_batch_time:0.06262564962836588
+Epoch5/150 train_losses:1.8590067202758789 train_batch_time:0.12823891639709473
+Epoch5/150 eval_losses:1.6545201073646545 top1-acc:40.99 top5-acc:90.65 eval_batch_time:0.0619116421717747
+Epoch6/150 train_losses:1.7624434745788575 train_batch_time:0.12896884554792243
+Epoch6/150 eval_losses:1.4883213748931885 top1-acc:47.48 top5-acc:91.74 eval_batch_time:0.06204431224021183
+Epoch7/150 train_losses:1.697379151916504 train_batch_time:0.1320746295592364
+Epoch7/150 eval_losses:1.3557794115066528 top1-acc:50.52 top5-acc:93.13 eval_batch_time:0.06366455934609577
+Epoch8/150 train_losses:1.6528489756774902 train_batch_time:0.13476029655817526
+Epoch8/150 eval_losses:1.4581880292892455 top1-acc:47.12 top5-acc:92.7 eval_batch_time:0.06368694487650683
+Epoch9/150 train_losses:1.589019970550537 train_batch_time:0.13205095599679387
+Epoch9/150 eval_losses:1.2958959184646606 top1-acc:54.39 top5-acc:93.57 eval_batch_time:0.06264989694971947
+Epoch10/150 train_losses:1.5613944471740722 train_batch_time:0.1309979434513375
+Epoch10/150 eval_losses:1.229827046585083 top1-acc:55.53 top5-acc:95.19 eval_batch_time:0.06291310650527857
+Epoch11/150 train_losses:1.5191274635314942 train_batch_time:0.13071856474327614
+Epoch11/150 eval_losses:1.2765125728607178 top1-acc:54.37 top5-acc:94.7 eval_batch_time:0.06282261526508695
+Epoch12/150 train_losses:1.5098942433166505 train_batch_time:0.13144102151436574
+Epoch12/150 eval_losses:1.1473346357345582 top1-acc:59.02 top5-acc:95.9 eval_batch_time:0.06289182650815149
+Epoch13/150 train_losses:1.4797609561157226 train_batch_time:0.12957913582892064
+Epoch13/150 eval_losses:1.1711577370643615 top1-acc:57.03 top5-acc:95.13 eval_batch_time:0.06241462792560553
+Epoch14/150 train_losses:1.4521630326843262 train_batch_time:0.12958434170774183
+Epoch14/150 eval_losses:1.1499460733413696 top1-acc:58.85 top5-acc:95.93 eval_batch_time:0.062414278649980094
+Epoch15/150 train_losses:1.4376082986450196 train_batch_time:0.1306389707433598
+Epoch15/150 eval_losses:1.0942850722312927 top1-acc:60.52 top5-acc:96.13 eval_batch_time:0.06323794498565091
+Epoch16/150 train_losses:1.3886987014770509 train_batch_time:0.13073126159970413
+Epoch16/150 eval_losses:1.1005885960578918 top1-acc:60.77 top5-acc:96.22 eval_batch_time:0.06363416781091387
+Epoch17/150 train_losses:1.3665908045196533 train_batch_time:0.13013283797847036
+Epoch17/150 eval_losses:1.0979938862800598 top1-acc:61.27 top5-acc:96.15 eval_batch_time:0.06278928525888236
+Epoch18/150 train_losses:1.3508763278961182 train_batch_time:0.13017586856851798
+Epoch18/150 eval_losses:1.035489091873169 top1-acc:63.25 top5-acc:96.39 eval_batch_time:0.06259212676127246
+Epoch19/150 train_losses:1.3356017155456543 train_batch_time:0.130338981328413
+Epoch19/150 eval_losses:1.0559630316734314 top1-acc:62.73 top5-acc:96.46 eval_batch_time:0.06293329311783906
+Epoch20/150 train_losses:1.3043091400909423 train_batch_time:0.13034426464753993
+Epoch20/150 eval_losses:1.0475120946884156 top1-acc:62.17 top5-acc:96.64 eval_batch_time:0.06265518164179128
+Epoch21/150 train_losses:1.2803390718078613 train_batch_time:0.13070022754961877
+Epoch21/150 eval_losses:0.9782089265823364 top1-acc:65.61 top5-acc:96.99 eval_batch_time:0.06287781751839219
+Epoch22/150 train_losses:1.2728952478790283 train_batch_time:0.13041156057811454
+Epoch22/150 eval_losses:0.9436331245422364 top1-acc:66.08 top5-acc:97.39 eval_batch_time:0.0628027278146926
+Epoch23/150 train_losses:1.2724578523254395 train_batch_time:0.13084576501870704
+Epoch23/150 eval_losses:0.9947449791431427 top1-acc:65.04 top5-acc:97.21 eval_batch_time:0.06302288231576324
+Epoch24/150 train_losses:1.27145095993042 train_batch_time:0.13037247151669945
+Epoch24/150 eval_losses:0.9593880295753479 top1-acc:65.76 top5-acc:97.47 eval_batch_time:0.062897449845721
+Epoch25/150 train_losses:1.2525332396698 train_batch_time:0.13084568879793368
+Epoch25/150 eval_losses:0.9622423660278321 top1-acc:65.76 top5-acc:97.07 eval_batch_time:0.06265329403482425
+Epoch26/150 train_losses:1.2353059797668458 train_batch_time:0.1300533854443094
+Epoch26/150 eval_losses:0.9545493330001831 top1-acc:66.22 top5-acc:97.5 eval_batch_time:0.06292190825103953
+Epoch27/150 train_losses:1.2115817740631103 train_batch_time:0.13079993346767962
+Epoch27/150 eval_losses:0.8837072959899902 top1-acc:68.67 top5-acc:97.64 eval_batch_time:0.06289480749968511
+Epoch28/150 train_losses:1.1969468585205079 train_batch_time:0.13033424527443888
+Epoch28/150 eval_losses:0.8900203662872315 top1-acc:68.12 top5-acc:97.36 eval_batch_time:0.06309337676710385
+Epoch29/150 train_losses:1.1918336672973633 train_batch_time:0.13074596763571814
+Epoch29/150 eval_losses:0.8581852832794189 top1-acc:69.31 top5-acc:97.83 eval_batch_time:0.0628103860624277
+Epoch30/150 train_losses:1.177901616897583 train_batch_time:0.1304088120570268
+Epoch30/150 eval_losses:0.9012856662750244 top1-acc:67.94 top5-acc:97.53 eval_batch_time:0.06292074045557884
+Epoch31/150 train_losses:1.1646792859649657 train_batch_time:0.1315399603465634
+Epoch31/150 eval_losses:0.8601991903305054 top1-acc:69.3 top5-acc:97.78 eval_batch_time:0.06297066105399163
+Epoch32/150 train_losses:1.1550374669647216 train_batch_time:0.1303421289414701
+Epoch32/150 eval_losses:0.8905510272979736 top1-acc:68.05 top5-acc:97.9 eval_batch_time:0.06291656433397037
+Epoch33/150 train_losses:1.1535710782623292 train_batch_time:0.13048230443159334
+Epoch33/150 eval_losses:0.9039619146347045 top1-acc:68.44 top5-acc:97.13 eval_batch_time:0.06289365489012116
+Epoch34/150 train_losses:1.141938374824524 train_batch_time:0.13062657846514222
+Epoch34/150 eval_losses:0.8232339686393738 top1-acc:70.57 top5-acc:97.94 eval_batch_time:0.0630028551551187
+Epoch35/150 train_losses:1.1385719707489013 train_batch_time:0.13082207407792815
+Epoch35/150 eval_losses:0.9321509827613831 top1-acc:67.21 top5-acc:97.7 eval_batch_time:0.06294123534184352
+Epoch36/150 train_losses:1.134597752456665 train_batch_time:0.1307099478324051
+Epoch36/150 eval_losses:0.7925405145645141 top1-acc:72.38 top5-acc:98.22 eval_batch_time:0.06286891706430228
+Epoch37/150 train_losses:1.1200274864959716 train_batch_time:0.1306820171873283
+Epoch37/150 eval_losses:0.8480731036186219 top1-acc:70.2 top5-acc:97.95 eval_batch_time:0.0629382300528751
+Epoch38/150 train_losses:1.1203835347747804 train_batch_time:0.1309609626565138
+Epoch38/150 eval_losses:0.8105956366539001 top1-acc:71.41 top5-acc:97.99 eval_batch_time:0.0630085923869139
+Epoch39/150 train_losses:1.101432696685791 train_batch_time:0.13068584377503456
+Epoch39/150 eval_losses:0.7835794384956359 top1-acc:72.23 top5-acc:98.06 eval_batch_time:0.06350928658892395
+Epoch40/150 train_losses:1.0888361644744873 train_batch_time:0.131865196215832
+Epoch40/150 eval_losses:0.7722850958824158 top1-acc:72.46 top5-acc:98.25 eval_batch_time:0.062803072534549
+Epoch41/150 train_losses:1.0897072246551514 train_batch_time:0.12883745312995618
+Epoch41/150 eval_losses:0.7570856195449829 top1-acc:73.02 top5-acc:98.4 eval_batch_time:0.0621162645376412
+Epoch42/150 train_losses:1.0829276546478273 train_batch_time:0.1285547600377856
+Epoch42/150 eval_losses:0.7709089979171753 top1-acc:73.16 top5-acc:98.34 eval_batch_time:0.06211406561979063
+Epoch43/150 train_losses:1.077248427886963 train_batch_time:0.1272281670509397
+Epoch43/150 eval_losses:0.7846733366966248 top1-acc:72.44 top5-acc:98.2 eval_batch_time:0.06202006188167888
+Epoch44/150 train_losses:1.053809818725586 train_batch_time:0.12909967057845173
+Epoch44/150 eval_losses:0.7792425448894501 top1-acc:72.64 top5-acc:98.14 eval_batch_time:0.06199387076554025
+Epoch45/150 train_losses:1.0390409003448486 train_batch_time:0.1287837318142357
+Epoch45/150 eval_losses:0.7072747296333313 top1-acc:75.03 top5-acc:98.63 eval_batch_time:0.06200487598492082
+Epoch46/150 train_losses:1.0422960285186769 train_batch_time:0.12887838063642498
+Epoch46/150 eval_losses:0.7098885409355163 top1-acc:75.47 top5-acc:98.52 eval_batch_time:0.06214074724039454
+Epoch47/150 train_losses:1.0308319522857665 train_batch_time:0.12953989066736168
+Epoch47/150 eval_losses:0.7121992656707764 top1-acc:75.22 top5-acc:98.62 eval_batch_time:0.06282296909648143
+Epoch48/150 train_losses:1.0153740576934815 train_batch_time:0.1289996131301841
+Epoch48/150 eval_losses:0.7303647891998291 top1-acc:74.67 top5-acc:98.54 eval_batch_time:0.06242351319379867
+Epoch49/150 train_losses:1.0142756145477294 train_batch_time:0.12916149080866743
+Epoch49/150 eval_losses:0.6791356399774552 top1-acc:76.28 top5-acc:98.68 eval_batch_time:0.06226287374071255
+Epoch50/150 train_losses:1.0013519953918457 train_batch_time:0.12894649670252104
+Epoch50/150 eval_losses:0.6973572839736939 top1-acc:75.63 top5-acc:98.43 eval_batch_time:0.06245511656354187
+Epoch51/150 train_losses:0.9957583463287354 train_batch_time:0.12947854757918725
+Epoch51/150 eval_losses:0.706021018409729 top1-acc:75.84 top5-acc:98.44 eval_batch_time:0.062408913472655474
+Epoch52/150 train_losses:0.9809159590148926 train_batch_time:0.12898855989851304
+Epoch52/150 eval_losses:0.7094467241287231 top1-acc:75.15 top5-acc:98.26 eval_batch_time:0.06258345105845457
+Epoch53/150 train_losses:0.9717443907356262 train_batch_time:0.12948849835359227
+Epoch53/150 eval_losses:0.6907332754135131 top1-acc:76.21 top5-acc:98.53 eval_batch_time:0.06250214728580158
+Epoch54/150 train_losses:0.9747059092330933 train_batch_time:0.12918158839730656
+Epoch54/150 eval_losses:0.7082410432815551 top1-acc:75.37 top5-acc:98.6 eval_batch_time:0.06241183220201237
+Epoch55/150 train_losses:0.9659603200912475 train_batch_time:0.13152981536162783
+Epoch55/150 eval_losses:0.6597071826934815 top1-acc:76.87 top5-acc:98.53 eval_batch_time:0.06264967979139584
+Epoch56/150 train_losses:0.953039423904419 train_batch_time:0.1292297523039991
+Epoch56/150 eval_losses:0.6799528068542481 top1-acc:76.31 top5-acc:98.72 eval_batch_time:0.06251023833159429
+Epoch57/150 train_losses:0.9445888455581665 train_batch_time:0.12973279477385305
+Epoch57/150 eval_losses:0.661158913898468 top1-acc:76.81 top5-acc:98.82 eval_batch_time:0.06233805152261333
+Epoch58/150 train_losses:0.9411663241577148 train_batch_time:0.12922933857764124
+Epoch58/150 eval_losses:0.7239687322616577 top1-acc:75.45 top5-acc:98.58 eval_batch_time:0.06257432433450298
+Epoch59/150 train_losses:0.9386821797943116 train_batch_time:0.12930236326154235
+Epoch59/150 eval_losses:0.6284443002700806 top1-acc:78.22 top5-acc:98.85 eval_batch_time:0.06231081713536742
+Epoch60/150 train_losses:0.9324484599304199 train_batch_time:0.12968610985504697
+Epoch60/150 eval_losses:0.6495493622779847 top1-acc:77.71 top5-acc:98.69 eval_batch_time:0.06237479379981946
+Epoch61/150 train_losses:0.9232602282714844 train_batch_time:0.12915325134306613
+Epoch61/150 eval_losses:0.6477158923625946 top1-acc:77.4 top5-acc:98.8 eval_batch_time:0.06244053962124381
+Epoch62/150 train_losses:0.9178086030197143 train_batch_time:0.12943297975203572
+Epoch62/150 eval_losses:0.6300370766639709 top1-acc:78.36 top5-acc:98.89 eval_batch_time:0.06273686809904257
+Epoch63/150 train_losses:0.9082832279586792 train_batch_time:0.12967674079758432
+Epoch63/150 eval_losses:0.6137957926750183 top1-acc:78.74 top5-acc:98.93 eval_batch_time:0.06291223635339434
+Epoch64/150 train_losses:0.9043697113037109 train_batch_time:0.12965985362791954
+Epoch64/150 eval_losses:0.6440212043523789 top1-acc:77.76 top5-acc:98.77 eval_batch_time:0.06266809724698401
+Epoch65/150 train_losses:0.8962780336380005 train_batch_time:0.12893963195478825
+Epoch65/150 eval_losses:0.6309161930561066 top1-acc:78.29 top5-acc:98.92 eval_batch_time:0.06269888817125065
+Epoch66/150 train_losses:0.8949939144897461 train_batch_time:0.12963434253507258
+Epoch66/150 eval_losses:0.6426730534553527 top1-acc:78.22 top5-acc:99.02 eval_batch_time:0.06256951951676873
+Epoch67/150 train_losses:0.8960665739822388 train_batch_time:0.12932998140144836
+Epoch67/150 eval_losses:0.6312636595726013 top1-acc:78.24 top5-acc:98.78 eval_batch_time:0.06258675399099946
+Epoch68/150 train_losses:0.8793567923736573 train_batch_time:0.1296312126052349
+Epoch68/150 eval_losses:0.6226964546203613 top1-acc:78.58 top5-acc:98.87 eval_batch_time:0.0626776385459171
+Epoch69/150 train_losses:0.8764717771148681 train_batch_time:0.12911905260647044
+Epoch69/150 eval_losses:0.6562662716865539 top1-acc:77.59 top5-acc:98.66 eval_batch_time:0.06262017207540524
+Epoch70/150 train_losses:0.86473378074646 train_batch_time:0.12973548384273753
+Epoch70/150 eval_losses:0.6168256025314331 top1-acc:79.03 top5-acc:98.77 eval_batch_time:0.06262327910988194
+Epoch71/150 train_losses:0.8687049510383607 train_batch_time:0.12960276457354847
+Epoch71/150 eval_losses:0.5752624872207641 top1-acc:80.73 top5-acc:99.11 eval_batch_time:0.062445724086397016
+Epoch72/150 train_losses:0.8666587998008728 train_batch_time:0.1293484884149888
+Epoch72/150 eval_losses:0.5716883733749389 top1-acc:80.54 top5-acc:99.04 eval_batch_time:0.062427856360271476
+Epoch73/150 train_losses:0.8561055034637451 train_batch_time:0.12971186942761512
+Epoch73/150 eval_losses:0.6119020341873169 top1-acc:78.99 top5-acc:98.81 eval_batch_time:0.06257289534161804
+Epoch74/150 train_losses:0.8475616530609131 train_batch_time:0.12947707468896266
+Epoch74/150 eval_losses:0.573533633351326 top1-acc:80.25 top5-acc:99.03 eval_batch_time:0.06248642077111894
+Epoch75/150 train_losses:0.8477167053222656 train_batch_time:0.1297447254590671
+Epoch75/150 eval_losses:0.6292999177932739 top1-acc:78.35 top5-acc:98.76 eval_batch_time:0.06264594557938302
+Epoch76/150 train_losses:0.8333355501556396 train_batch_time:0.12968375585268221
+Epoch76/150 eval_losses:0.5813938898086548 top1-acc:79.98 top5-acc:98.95 eval_batch_time:0.06256310803115747
+Epoch77/150 train_losses:0.838634793548584 train_batch_time:0.12962116609753854
+Epoch77/150 eval_losses:0.5641533498764038 top1-acc:80.6 top5-acc:98.89 eval_batch_time:0.06259705306618077
+Epoch78/150 train_losses:0.8300963818359375 train_batch_time:0.12912086056321478
+Epoch78/150 eval_losses:0.5626437532901764 top1-acc:80.36 top5-acc:99.07 eval_batch_time:0.06249885650197412
+Epoch79/150 train_losses:0.8258655027008056 train_batch_time:0.1297601391287411
+Epoch79/150 eval_losses:0.5476852208137513 top1-acc:81.05 top5-acc:99.08 eval_batch_time:0.062505372770273
+Epoch80/150 train_losses:0.8215908083343506 train_batch_time:0.12930655997732413
+Epoch80/150 eval_losses:0.5899450835704804 top1-acc:79.62 top5-acc:99.08 eval_batch_time:0.06251337270068515
+Epoch81/150 train_losses:0.8101082426071167 train_batch_time:0.1297019610319601
+Epoch81/150 eval_losses:0.5747665899276734 top1-acc:80.28 top5-acc:98.98 eval_batch_time:0.0626978555302711
+Epoch82/150 train_losses:0.8067177534103394 train_batch_time:0.1301090936831501
+Epoch82/150 eval_losses:0.5439336941719055 top1-acc:81.13 top5-acc:99.19 eval_batch_time:0.06286338180493398
+Epoch83/150 train_losses:0.80167052318573 train_batch_time:0.131012934857927
+Epoch83/150 eval_losses:0.6028285048484803 top1-acc:79.32 top5-acc:99.07 eval_batch_time:0.06301391959949663
+Epoch84/150 train_losses:0.7962778314590454 train_batch_time:0.13031897337540335
+Epoch84/150 eval_losses:0.586261727809906 top1-acc:79.52 top5-acc:98.96 eval_batch_time:0.06289923722576943
+Epoch85/150 train_losses:0.7921115168380737 train_batch_time:0.13094732767480718
+Epoch85/150 eval_losses:0.5389741211891175 top1-acc:81.47 top5-acc:99.01 eval_batch_time:0.0629712517853755
+Epoch86/150 train_losses:0.7879792056655884 train_batch_time:0.13043219110240106
+Epoch86/150 eval_losses:0.5359078103065491 top1-acc:81.49 top5-acc:99.06 eval_batch_time:0.06292795831230795
+Epoch87/150 train_losses:0.7895654612731934 train_batch_time:0.1310120320990872
+Epoch87/150 eval_losses:0.5277142645835876 top1-acc:82.17 top5-acc:99.32 eval_batch_time:0.06293218151019637
+Epoch88/150 train_losses:0.786489041557312 train_batch_time:0.1304397320808352
+Epoch88/150 eval_losses:0.5350686657905579 top1-acc:81.98 top5-acc:99.12 eval_batch_time:0.06301218840726622
+Epoch89/150 train_losses:0.7681389947509766 train_batch_time:0.13134090065041468
+Epoch89/150 eval_losses:0.5309471135139465 top1-acc:81.64 top5-acc:99.13 eval_batch_time:0.0629689298617612
+Epoch90/150 train_losses:0.7793442869949341 train_batch_time:0.13048195442580202
+Epoch90/150 eval_losses:0.5325897363662719 top1-acc:82.07 top5-acc:99.18 eval_batch_time:0.0629417076232327
+Epoch91/150 train_losses:0.759985142288208 train_batch_time:0.130478213510245
+Epoch91/150 eval_losses:0.5320332744598388 top1-acc:81.51 top5-acc:99.22 eval_batch_time:0.06298556753024934
+Epoch92/150 train_losses:0.7677655150222779 train_batch_time:0.13078001606494874
+Epoch92/150 eval_losses:0.5136324021339417 top1-acc:82.04 top5-acc:99.14 eval_batch_time:0.06305056316837383
+Epoch93/150 train_losses:0.7654897003650666 train_batch_time:0.13028303101239608
+Epoch93/150 eval_losses:0.49623429145812986 top1-acc:82.78 top5-acc:99.28 eval_batch_time:0.0629306355859064
+Epoch94/150 train_losses:0.7491773342895508 train_batch_time:0.13089294018952743
+Epoch94/150 eval_losses:0.5124118829727173 top1-acc:82.94 top5-acc:99.2 eval_batch_time:0.0629599170320353
+Epoch95/150 train_losses:0.7499563501358032 train_batch_time:0.13060554427563992
+Epoch95/150 eval_losses:0.5141862757205963 top1-acc:82.44 top5-acc:99.12 eval_batch_time:0.06364462633801114
+Epoch96/150 train_losses:0.7436196194076538 train_batch_time:0.1311466687780512
+Epoch96/150 eval_losses:0.5233407139778137 top1-acc:82.02 top5-acc:99.21 eval_batch_time:0.06306310823768567
+Epoch97/150 train_losses:0.7310304735946656 train_batch_time:0.13001635617307386
+Epoch97/150 eval_losses:0.4943073931694031 top1-acc:82.94 top5-acc:99.29 eval_batch_time:0.06305348189773073
+Epoch98/150 train_losses:0.7308249108505249 train_batch_time:0.13105371541074476
+Epoch98/150 eval_losses:0.5134085377693176 top1-acc:82.53 top5-acc:99.23 eval_batch_time:0.06312273717989587
+Epoch99/150 train_losses:0.7353937969875336 train_batch_time:0.130559319730305
+Epoch99/150 eval_losses:0.49755611095428465 top1-acc:82.85 top5-acc:99.23 eval_batch_time:0.0630620710409371
+Epoch100/150 train_losses:0.7223799996185303 train_batch_time:0.13112753004674108
+Epoch100/150 eval_losses:0.5106450850486756 top1-acc:82.64 top5-acc:99.19 eval_batch_time:0.06301511017380247
+Epoch101/150 train_losses:0.7313835914611816 train_batch_time:0.13055320438521598
+Epoch101/150 eval_losses:0.47891533279418946 top1-acc:83.17 top5-acc:99.26 eval_batch_time:0.06298615674304354
+Epoch102/150 train_losses:0.7224515633773804 train_batch_time:0.1311020335882826
+Epoch102/150 eval_losses:0.5075299377918243 top1-acc:82.67 top5-acc:99.18 eval_batch_time:0.06308737681929473
+Epoch103/150 train_losses:0.7166201619338989 train_batch_time:0.1310545117653849
+Epoch103/150 eval_losses:0.5115765435218811 top1-acc:82.12 top5-acc:99.28 eval_batch_time:0.06320524671275145
+Epoch104/150 train_losses:0.711377670135498 train_batch_time:0.1307837021015489
+Epoch104/150 eval_losses:0.48248049652576447 top1-acc:83.33 top5-acc:99.27 eval_batch_time:0.06314516523081785
+Epoch105/150 train_losses:0.7140743851470948 train_batch_time:0.13133741187317596
+Epoch105/150 eval_losses:0.4879512343883514 top1-acc:83.17 top5-acc:99.25 eval_batch_time:0.06327165919504348
+Epoch106/150 train_losses:0.7094371292304993 train_batch_time:0.1306870623927592
+Epoch106/150 eval_losses:0.4757007395744324 top1-acc:83.6 top5-acc:99.23 eval_batch_time:0.06293193701725856
+Epoch107/150 train_losses:0.7054282297897339 train_batch_time:0.1308209685718312
+Epoch107/150 eval_losses:0.5092860244274139 top1-acc:82.74 top5-acc:99.23 eval_batch_time:0.06308109441380592
+Epoch108/150 train_losses:0.6999142492675782 train_batch_time:0.13087334047497995
+Epoch108/150 eval_losses:0.5068767595291138 top1-acc:83.06 top5-acc:99.22 eval_batch_time:0.06306288804218269
+Epoch109/150 train_losses:0.6935272099685669 train_batch_time:0.1310703422102477
+Epoch109/150 eval_losses:0.47946193771362305 top1-acc:83.58 top5-acc:99.33 eval_batch_time:0.0633462189109462
+Epoch110/150 train_losses:0.6921455452346802 train_batch_time:0.13064715380558883
+Epoch110/150 eval_losses:0.4811419194221497 top1-acc:83.64 top5-acc:99.24 eval_batch_time:0.06302546999257082
+Epoch111/150 train_losses:0.6886923309707642 train_batch_time:0.13156262992897913
+Epoch111/150 eval_losses:0.48322513692379 top1-acc:83.5 top5-acc:99.19 eval_batch_time:0.06355631275541464
+Epoch112/150 train_losses:0.6827952810668946 train_batch_time:0.1310849976356682
+Epoch112/150 eval_losses:0.47681500730514526 top1-acc:83.83 top5-acc:99.27 eval_batch_time:0.06298592439882315
+Epoch113/150 train_losses:0.6772799852371216 train_batch_time:0.131083056445012
+Epoch113/150 eval_losses:0.4783997459888458 top1-acc:83.71 top5-acc:99.16 eval_batch_time:0.06316219621403202
+Epoch114/150 train_losses:0.6787066202163696 train_batch_time:0.1297609528617176
+Epoch114/150 eval_losses:0.4672264588356018 top1-acc:83.87 top5-acc:99.28 eval_batch_time:0.06283122566854878
+Epoch115/150 train_losses:0.6770392309188843 train_batch_time:0.13031074305629486
+Epoch115/150 eval_losses:0.4701190891265869 top1-acc:83.93 top5-acc:99.33 eval_batch_time:0.0628098894836037
+Epoch116/150 train_losses:0.667607132139206 train_batch_time:0.1297031775155031
+Epoch116/150 eval_losses:0.4645509277582169 top1-acc:83.7 top5-acc:99.28 eval_batch_time:0.06290671627992278
+Epoch117/150 train_losses:0.6645559024429322 train_batch_time:0.1299838480132315
+Epoch117/150 eval_losses:0.4642397597312927 top1-acc:84.09 top5-acc:99.41 eval_batch_time:0.06293860818170438
+Epoch118/150 train_losses:0.6607577912330628 train_batch_time:0.13007937337431458
+Epoch118/150 eval_losses:0.4574904854297638 top1-acc:84.67 top5-acc:99.3 eval_batch_time:0.0628011393698917
+Epoch119/150 train_losses:0.6649959079647064 train_batch_time:0.12996111318583378
+Epoch119/150 eval_losses:0.45751555471420285 top1-acc:84.14 top5-acc:99.26 eval_batch_time:0.06284107827836541
+Epoch120/150 train_losses:0.661457804107666 train_batch_time:0.13041061178192764
+Epoch120/150 eval_losses:0.45513968191146853 top1-acc:84.58 top5-acc:99.34 eval_batch_time:0.06281279302706384
+Epoch121/150 train_losses:0.6538236518478393 train_batch_time:0.1302056931473715
+Epoch121/150 eval_losses:0.45706079959869383 top1-acc:84.41 top5-acc:99.36 eval_batch_time:0.06288049327340095
+Epoch122/150 train_losses:0.6491191612625122 train_batch_time:0.13028321455201836
+Epoch122/150 eval_losses:0.452016561293602 top1-acc:84.64 top5-acc:99.29 eval_batch_time:0.06285341074512263
+Epoch123/150 train_losses:0.649620345249176 train_batch_time:0.12987663953200632
+Epoch123/150 eval_losses:0.45024817752838137 top1-acc:84.76 top5-acc:99.32 eval_batch_time:0.0627902556376852
+Epoch124/150 train_losses:0.6488209613800049 train_batch_time:0.13023129357096483
+Epoch124/150 eval_losses:0.4519183732032776 top1-acc:84.53 top5-acc:99.37 eval_batch_time:0.0629432262129085
+Epoch125/150 train_losses:0.6421316370201111 train_batch_time:0.1296132659668203
+Epoch125/150 eval_losses:0.4560705632209778 top1-acc:84.74 top5-acc:99.31 eval_batch_time:0.06284324075006376
+Epoch126/150 train_losses:0.6375459429550171 train_batch_time:0.13014153141499785
+Epoch126/150 eval_losses:0.4481528312444687 top1-acc:84.68 top5-acc:99.36 eval_batch_time:0.06289256150555458
+Epoch127/150 train_losses:0.6371229054641724 train_batch_time:0.12984646067899816
+Epoch127/150 eval_losses:0.44454394454956053 top1-acc:84.83 top5-acc:99.36 eval_batch_time:0.06373844328959277
+Epoch128/150 train_losses:0.6388393759918213 train_batch_time:0.13028420054394266
+Epoch128/150 eval_losses:0.45242021780014036 top1-acc:84.39 top5-acc:99.31 eval_batch_time:0.06290214684358827
+Epoch129/150 train_losses:0.6319717503356933 train_batch_time:0.12956364319452543
+Epoch129/150 eval_losses:0.44601462173461914 top1-acc:84.97 top5-acc:99.35 eval_batch_time:0.06279469903107661
+Epoch130/150 train_losses:0.6308504903411866 train_batch_time:0.1301810588983014
+Epoch130/150 eval_losses:0.44790504832267763 top1-acc:84.57 top5-acc:99.36 eval_batch_time:0.06273696832596116
+Epoch131/150 train_losses:0.629714457206726 train_batch_time:0.13018228971134976
+Epoch131/150 eval_losses:0.4492320140838623 top1-acc:84.66 top5-acc:99.32 eval_batch_time:0.06293968334319486
+Epoch132/150 train_losses:0.6212344191360474 train_batch_time:0.1300990541877649
+Epoch132/150 eval_losses:0.45429031648635865 top1-acc:84.38 top5-acc:99.4 eval_batch_time:0.06284009726943483
+Epoch133/150 train_losses:0.6285142648029327 train_batch_time:0.13014816323204723
+Epoch133/150 eval_losses:0.4509465026140213 top1-acc:84.72 top5-acc:99.38 eval_batch_time:0.06289516436825891
+Epoch134/150 train_losses:0.6227162968444824 train_batch_time:0.13004112274140653
+Epoch134/150 eval_losses:0.4499674649953842 top1-acc:84.52 top5-acc:99.42 eval_batch_time:0.0629098157214511
+Epoch135/150 train_losses:0.628517525100708 train_batch_time:0.1301646769199225
+Epoch135/150 eval_losses:0.4496853615760803 top1-acc:84.59 top5-acc:99.33 eval_batch_time:0.06372738036380451
+Epoch136/150 train_losses:0.620531123828888 train_batch_time:0.13004698594817726
+Epoch136/150 eval_losses:0.44432277736663817 top1-acc:84.84 top5-acc:99.39 eval_batch_time:0.06284538348009631
+Epoch137/150 train_losses:0.6215366166877747 train_batch_time:0.1303802301816623
+Epoch137/150 eval_losses:0.4429831679344177 top1-acc:84.8 top5-acc:99.32 eval_batch_time:0.06271981281839359
+Epoch138/150 train_losses:0.6222605103683472 train_batch_time:0.1296686711518661
+Epoch138/150 eval_losses:0.4473107668876648 top1-acc:84.97 top5-acc:99.4 eval_batch_time:0.06278727616474128
+Epoch139/150 train_losses:0.6202584196281433 train_batch_time:0.1300151570678672
+Epoch139/150 eval_losses:0.4483238495349884 top1-acc:84.89 top5-acc:99.29 eval_batch_time:0.06281604129038039
+Epoch140/150 train_losses:0.6191060823249817 train_batch_time:0.12957990779291334
+Epoch140/150 eval_losses:0.4434338753223419 top1-acc:84.79 top5-acc:99.36 eval_batch_time:0.06287126480394108
+Epoch141/150 train_losses:0.6146116945266724 train_batch_time:0.13025266252210377
+Epoch141/150 eval_losses:0.44786466503143313 top1-acc:84.75 top5-acc:99.31 eval_batch_time:0.06302143965557122
+Epoch142/150 train_losses:0.6185443029880524 train_batch_time:0.12980331270895956
+Epoch142/150 eval_losses:0.44939569792747497 top1-acc:84.69 top5-acc:99.3 eval_batch_time:0.0630308382070748
+Epoch143/150 train_losses:0.6112271167755127 train_batch_time:0.13019514510698635
+Epoch143/150 eval_losses:0.4439548566818237 top1-acc:84.77 top5-acc:99.32 eval_batch_time:0.06327844729089434
+Epoch144/150 train_losses:0.6126174505805969 train_batch_time:0.13019237250013424
+Epoch144/150 eval_losses:0.4469678918838501 top1-acc:84.64 top5-acc:99.37 eval_batch_time:0.06274716565563421
+Epoch145/150 train_losses:0.6097069388771057 train_batch_time:0.1302176784066593
+Epoch145/150 eval_losses:0.44901561534404755 top1-acc:84.84 top5-acc:99.29 eval_batch_time:0.06287127391547914
+Epoch146/150 train_losses:0.6070754046821594 train_batch_time:0.13014253813897253
+Epoch146/150 eval_losses:0.4420236285686493 top1-acc:84.88 top5-acc:99.34 eval_batch_time:0.06303089287630312
+Epoch147/150 train_losses:0.6205563494491577 train_batch_time:0.13148126394852347
+Epoch147/150 eval_losses:0.4480430335044861 top1-acc:84.84 top5-acc:99.32 eval_batch_time:0.06307845358635969
+Epoch148/150 train_losses:0.6172174361801147 train_batch_time:0.13089534144877168
+Epoch148/150 eval_losses:0.44773652334213254 top1-acc:84.77 top5-acc:99.35 eval_batch_time:0.06314388505972116
+Epoch149/150 train_losses:0.6162312632369995 train_batch_time:0.13117520278677
+Epoch149/150 eval_losses:0.4441598575592041 top1-acc:84.85 top5-acc:99.39 eval_batch_time:0.06307987194911689
+Epoch150/150 train_losses:0.6145734870147705 train_batch_time:0.13102551707831187
+Epoch150/150 eval_losses:0.44333721380233765 top1-acc:84.94 top5-acc:99.31 eval_batch_time:0.06309882546686063
