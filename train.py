@@ -8,7 +8,7 @@ import torchvision
 import torch.nn as nn
 import torchvision.transforms as transforms
 from utils import *
-import model
+import model as mymodel
 import time
 from torch.cuda.amp import autocast,GradScaler
 config_parser = argparse.ArgumentParser(description='parameter file')
@@ -75,7 +75,7 @@ def train(model,train_loader,eval_loader,args):
     model.to(device)
     criterion = nn.CrossEntropyLoss().cuda()
     optimizer = torch.optim.AdamW(model.parameters(),lr=args.lr,betas=(0.9,0.999),eps=1e-8,weight_decay=args.wd,amsgrad=False)
-    optimizer = torch.optim.SGD(model.parameters() ,lr=args.lr,momentum=0.9)
+    # optimizer = torch.optim.SGD(model.parameters() ,lr=args.lr,momentum=0.9)
     if args.inherit==True:
         checkpoint = torch.load(args.model_path)
         model.load_state_dict(checkpoint['model'])
@@ -116,10 +116,13 @@ def eval(model,model_path,eval_loader,args):
     elif args.mode=='snn':
         if args.use_maxpool:
             model = replace_maxpool2d_by_MaxpoolNeuron(model)
-        model = replace_activation_by_neuron(model,args.t)
         print("start")
-        loss,top1,top5,batch_time = validate_snn(model,eval_loader,criterion,args)
-        print("snn : eval_losses:{} top1-acc:{} top5-acc:{} eval_batch_time:{}".format(loss,top1,top5,batch_time))
+        model = replace_activation_by_neuron(model,args.t)
+        loss, top1, top5, batch_time = validate_snn(model, eval_loader, criterion, args)
+        with open('snn_test.txt','a') as f:
+            f.write("snn T={}={}+{}: eval_losses:{} top1-acc:{} top5-acc:{} eval_batch_time:{}\n".format(args.t + args.extra_t, args.t, args.extra_t, loss, top1, top5, batch_time))
+        print("snn T={}={}+{}: eval_losses:{} top1-acc:{} top5-acc:{} eval_batch_time:{}".format(args.t + args.extra_t, args.t, args.extra_t, loss, top1, top5, batch_time))
+
 def train_one_epoch(model, loader, optimizer, loss_fn, args,nowepoch):
     # timm.utils.AverageMeter：用于统计某个数据在一定次数内的平均值和总个数
     # 统计每批平均用时
@@ -209,6 +212,7 @@ def validate_snn(model,loader,loss_fn,args):
             for tt in range(args.extra_t):  # 模拟extra_t个额外时间长度释放脉冲
                 out = model(tmp)  # 计算当前输入在当前网络下的输出
                 output += out  # 计算目前总脉冲数
+            output=output/args.t
             reset_net(model)  # 更新模型,包括膜电位在内的参数
             loss = loss_fn(output, target)
             # functional.reset_net(model)
@@ -241,7 +245,7 @@ if __name__ == '__main__':
         args.num_classes=10
     train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=args.bs, shuffle=True)
     eval_loader = torch.utils.data.DataLoader(eval_dataset, batch_size=args.bs, shuffle=True)
-    model = model.Transformer(img_size_h=args.img_size, img_size_w=args.img_size,
+    model = mymodel.Transformer(img_size_h=args.img_size, img_size_w=args.img_size,
         patch_size=args.patch_size, embed_dims=args.dim, num_heads=args.num_heads, mlp_ratios=args.mlp_ratio,
         in_channels=3, num_classes=args.num_classes)
     if not args.use_maxpool:

@@ -72,7 +72,7 @@ def replace_maxpool2d_by_avgpool2d(model):#将模型中的平均池化层全部�
                                                 padding=module.padding)
     return model
 
-def replace_maxpool2d_by_MaxpoolNeuron (model):#将模型中的平均池化层全部替换为最大池化层
+def replace_maxpool2d_by_MaxpoolNeuron (model):#将模型中最大池化层替换为最大池化神经元
     for name, module in model._modules.items():
         if hasattr(module, "_modules"):#将子模型中递归替换
             model._modules[name] = replace_maxpool2d_by_MaxpoolNeuron(module)

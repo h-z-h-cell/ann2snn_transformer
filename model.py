@@ -143,72 +143,72 @@ class Embedding(nn.Module):
         self.H, self.W = self.image_size[0] // patch_size[0], self.image_size[1] // patch_size[1]
         self.num_patches = self.H * self.W
 
-        # #四个Embedding块，4块的卷积层的输出通道数分别是D/8、D/4、D/2、D，cifar10测试时我们采用的embed_dims为384
-        # self.proj_conv = nn.Conv2d(in_channels, embed_dims//8, kernel_size=3, stride=1, padding=1, bias=False)
-        # self.proj_bn = nn.BatchNorm2d(embed_dims//8)
-        # self.proj_relu = nn.ReLU(inplace=True)
-        #
-        # self.proj_conv1 = nn.Conv2d(embed_dims//8, embed_dims//4, kernel_size=3, stride=1, padding=1, bias=False)
-        # self.proj_bn1 = nn.BatchNorm2d(embed_dims//4)
-        # self.proj_relu1 = nn.ReLU(inplace=True)
-        #
-        # self.proj_conv2 = nn.Conv2d(embed_dims//4, embed_dims//2, kernel_size=3, stride=1, padding=1, bias=False)
-        # self.proj_bn2 = nn.BatchNorm2d(embed_dims//2)
-        # self.proj_relu2 = nn.ReLU(inplace=True)
-        # self.maxpool2 = torch.nn.MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
-        #
-        # self.proj_conv3 = nn.Conv2d(embed_dims//2, embed_dims, kernel_size=3, stride=1, padding=1, bias=False)
-        # self.proj_bn3 = nn.BatchNorm2d(embed_dims)
-        # self.proj_relu3 = nn.ReLU(inplace=True)
-        # self.maxpool3 = torch.nn.MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+        #四个Embedding块，4块的卷积层的输出通道数分别是D/8、D/4、D/2、D，cifar10测试时我们采用的embed_dims为384
+        self.proj_conv = nn.Conv2d(in_channels, embed_dims//8, kernel_size=3, stride=1, padding=1, bias=False)
+        self.proj_bn = nn.BatchNorm2d(embed_dims//8)
+        self.proj_relu = nn.ReLU(inplace=True)
+
+        self.proj_conv1 = nn.Conv2d(embed_dims//8, embed_dims//4, kernel_size=3, stride=1, padding=1, bias=False)
+        self.proj_bn1 = nn.BatchNorm2d(embed_dims//4)
+        self.proj_relu1 = nn.ReLU(inplace=True)
+
+        self.proj_conv2 = nn.Conv2d(embed_dims//4, embed_dims//2, kernel_size=3, stride=1, padding=1, bias=False)
+        self.proj_bn2 = nn.BatchNorm2d(embed_dims//2)
+        self.proj_relu2 = nn.ReLU(inplace=True)
+        self.maxpool2 = torch.nn.MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+
+        self.proj_conv3 = nn.Conv2d(embed_dims//2, embed_dims, kernel_size=3, stride=1, padding=1, bias=False)
+        self.proj_bn3 = nn.BatchNorm2d(embed_dims)
+        self.proj_relu3 = nn.ReLU(inplace=True)
+        self.maxpool3 = torch.nn.MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
 
         #相对位置嵌入
         self.rpe_conv = nn.Conv2d(embed_dims, embed_dims, kernel_size=3, stride=1, padding=1, bias=False)
         self.rpe_bn = nn.BatchNorm2d(embed_dims)
         self.rpe_relu = nn.ReLU(inplace=True)
 
-        self.conv0 = nn.Conv2d(in_channels, embed_dims,kernel_size=self.patch_size,stride=self.patch_size,padding='valid')
-        self.proj_bn0 = nn.BatchNorm2d(embed_dims)
-        self.proj_relu0 = nn.ReLU(inplace=True)
+        # self.conv0 = nn.Conv2d(in_channels, embed_dims,kernel_size=self.patch_size,stride=self.patch_size,padding='valid')
+        # self.proj_bn0 = nn.BatchNorm2d(embed_dims)
+        # self.proj_relu0 = nn.ReLU(inplace=True)
     def forward(self, x):
         # torch.Size([64, 3, 32, 32])
         # 这里的H,W是一个图片的宽高
         B, C, H, W = x.shape
 
-        x = self.conv0(x)
-        x = self.proj_bn0(x).contiguous()
-        x = self.proj_relu0(x)
+        # x = self.conv0(x)
+        # x = self.proj_bn0(x).contiguous()
+        # x = self.proj_relu0(x)
 
-        # #以cifar为例记录维度变化过程
-        # # torch.Size([64, 3, 32, 32])
-        # x = self.proj_conv(x)
-        # # torch.Size([64, 48, 32, 32])
-        # x = self.proj_bn(x).contiguous()
-        # x = self.proj_relu(x)
-        #
-        # # torch.Size([64, 48, 32, 32])
-        # x = self.proj_conv1(x)
-        # # torch.Size([64, 96, 32, 32])
-        # x = self.proj_bn1(x).contiguous()
-        # x = self.proj_relu1(x)
-        #
-        # # torch.Size([64, 96, 32, 32])
-        # x = self.proj_conv2(x)
-        # # torch.Size([64, 192, 32, 32])
-        # x = self.proj_bn2(x).contiguous()
-        # # torch.Size([64, 192, 32, 32])
-        # x = self.proj_relu2(x)
-        # x = self.maxpool2(x)
-        # # torch.Size([64, 192, 16, 16])
-        #
-        # # torch.Size([64, 192, 16, 16])
-        # x = self.proj_conv3(x)
-        # # torch.Size([64, 384, 16, 16])
-        # x = self.proj_bn3(x).contiguous()
-        # x = self.proj_relu3(x)
-        # # torch.Size([64, 384, 16, 16])
-        # x = self.maxpool3(x)
-        # # torch.Size([64, 384, 8, 8])
+        #以cifar为例记录维度变化过程
+        # torch.Size([64, 3, 32, 32])
+        x = self.proj_conv(x)
+        # torch.Size([64, 48, 32, 32])
+        x = self.proj_bn(x).contiguous()
+        x = self.proj_relu(x)
+
+        # torch.Size([64, 48, 32, 32])
+        x = self.proj_conv1(x)
+        # torch.Size([64, 96, 32, 32])
+        x = self.proj_bn1(x).contiguous()
+        x = self.proj_relu1(x)
+
+        # torch.Size([64, 96, 32, 32])
+        x = self.proj_conv2(x)
+        # torch.Size([64, 192, 32, 32])
+        x = self.proj_bn2(x).contiguous()
+        # torch.Size([64, 192, 32, 32])
+        x = self.proj_relu2(x)
+        x = self.maxpool2(x)
+        # torch.Size([64, 192, 16, 16])
+
+        # torch.Size([64, 192, 16, 16])
+        x = self.proj_conv3(x)
+        # torch.Size([64, 384, 16, 16])
+        x = self.proj_bn3(x).contiguous()
+        x = self.proj_relu3(x)
+        # torch.Size([64, 384, 16, 16])
+        x = self.maxpool3(x)
+        # torch.Size([64, 384, 8, 8])
 
         # torch.Size([64, 384, 8, 8])
         x_feat = x.contiguous()
@@ -305,5 +305,34 @@ class Transformer(nn.Module):
         # torch.Size([64, 10])
         return x
 
+# ann : eval_losses:0.4527915343046188 top1-acc:89.22 top5-acc:99.49 eval_batch_time:0.05514060312015995
+# snn T=1=1+0: eval_losses:1.1128227320194244 top1-acc:65.25 top5-acc:96.03 eval_batch_time:0.0885244266242738
+# snn T=2=1+1: eval_losses:1.6245157270431518 top1-acc:58.11 top5-acc:94.99 eval_batch_time:0.13887094692060142
+# snn T=2=2+0: eval_losses:0.9291112995624542 top1-acc:80.29 top5-acc:98.76 eval_batch_time:0.1381555302127911
+# snn T=3=2+1: eval_losses:0.6202019457355141 top1-acc:82.1 top5-acc:98.88 eval_batch_time:0.0499275619506836
+# snn T=3=3+0: eval_losses:0.5067776840142906 top1-acc:84.35 top5-acc:99.18 eval_batch_time:0.049811002731323245
 
+# snn T=4=2+2: eval_losses:0.7472348622828722 top1-acc:80.64 top5-acc:98.57 eval_batch_time:0.06236451225280762
+# snn T=4=3+1: eval_losses:0.5165169469084591 top1-acc:85.8 top5-acc:99.27 eval_batch_time:0.06257378387451172
+# snn T=4=4+0: eval_losses:0.4583723313331604 top1-acc:86.75 top5-acc:99.33 eval_batch_time:0.24066981540364066
 
+# snn T=5=3+2: eval_losses:0.5669321703528986 top1-acc:85.47 top5-acc:99.25 eval_batch_time:0.07547797622680665
+# snn T=5=4+1: eval_losses:0.47499753468045963 top1-acc:87.4 top5-acc:99.37 eval_batch_time:0.07761722145080567
+# snn T=5=5+0: eval_losses:0.4337838780356571 top1-acc:87.88 top5-acc:99.48 eval_batch_time:0.07687041931152344
+
+# snn T=6=4+2: eval_losses:0.5085183774352073 top1-acc:87.19 top5-acc:99.41 eval_batch_time:0.34275949988395543
+# snn T=6=5+1: eval_losses:0.4549043833931908 top1-acc:88.23 top5-acc:99.45 eval_batch_time:0.09184549713134765
+# snn T=6=6+0: eval_losses:0.4213862358129583 top1-acc:88.49 top5-acc:99.5 eval_batch_time:0.0914136547088623
+
+# snn T=7=5+2: eval_losses:0.4834296921891626 top1-acc:88.08 top5-acc:99.42 eval_batch_time:0.10091479225158691
+# snn T=7=6+1: eval_losses:0.44196507512279787 top1-acc:88.73 top5-acc:99.47 eval_batch_time:0.10298704872131348
+# snn T=7=7+0: eval_losses:0.4133954151966609 top1-acc:88.86 top5-acc:99.49 eval_batch_time:0.10211752281188965
+
+# snn T=8=6+2: eval_losses:0.4652713478922844 top1-acc:88.6 top5-acc:99.47 eval_batch_time:0.44332468130026653
+# snn T=8=7+1: eval_losses:0.4339928182005882 top1-acc:89.02 top5-acc:99.51 eval_batch_time:0.443396206873997
+# snn T=8=8+0: eval_losses:0.40828094519376756 top1-acc:89.01 top5-acc:99.54 eval_batch_time:0.44243110668887
+
+# snn T=12=8+4: eval_losses:0.5291779225809965 top1-acc:88.07 top5-acc:99.33 eval_batch_time:0.16888291206359862
+# snn T=12=12+0: eval_losses:0.40887238159282135 top1-acc:89.38 top5-acc:99.58 eval_batch_time:0.16689386596679687
+# snn T=16=8+8: eval_losses:1.178312246030569 top1-acc:75.9 top5-acc:98.36 eval_batch_time:0.21590163993835448
+# snn T=16=16+0: eval_losses:0.41413286726800724 top1-acc:89.49 top5-acc:99.58 eval_batch_time:0.21767448654174804

@@ -1,13 +1,13 @@
 action: test
 mode: snn
 l: 4
-t: 16
+t: 6
 extra_t: 0
 bs: 64
 lr: 1e-2
 wd: 1e-4
-epochs: 150
-id: mymodel2
+epochs: 300
+id: mymodel4
 seed: 42
 data: cifar10
 dim: 384
@@ -16,7 +16,7 @@ patch_size: 4
 mlp_ratio: 4
 save: True
 save_acc: True
-model_path: ./mymodel1/best_model.pt
+model_path: ./mymodel3/best_model.pt
 inherit: False
 use_maxpool: True
 use_amp: True
